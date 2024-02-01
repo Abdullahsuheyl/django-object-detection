@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Detect Objects{% endblock %}
+{% block content %}
+    <h1>Upload Success</h1>
+
+    <!-- Görüntü yükleme başarılı mesajı -->
+    <p>Your image has been successfully uploaded.</p>
+
+    <!-- Yeniden başka bir görüntü yüklemek için bağlantı -->
+    <a href="{% url 'upload_image' %}">Upload Another Image</a>
+{% endblock %}

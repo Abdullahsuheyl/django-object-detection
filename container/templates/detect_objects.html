@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Detect Objects{% endblock %}
+{% block content %}
+
+    <h1>Detected Objects</h1>
+
+    <!-- Algılanan nesnelerin görüntüsü -->
+    <h2>Original Image</h2>
+    <img src="{{ uploaded_image.image.url }}" alt="Original Image">
+
+    <!-- Algılama sonuçları -->
+    <h2>Result</h2>
+    <img src="{{ result_image_path }}" alt="Detected Objects">
+{% endblock %}

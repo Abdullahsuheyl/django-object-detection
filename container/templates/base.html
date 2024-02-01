@@ -1,0 +1,65 @@
+<!-- base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Varsayılan Başlık{% endblock %}</title>
+    <!-- Diğer başlık etiketleri buraya eklenebilir -->
+</head>
+<style>
+    header {
+        background-color: #f2f2f2;
+        padding: 10px;
+        text-align: center;
+    }
+
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav ul li {
+        display: inline;
+        margin-right: 20px;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-weight: normal;
+    }
+
+    nav ul li a.selected {
+        font-weight: bold;
+        color: #007bff; /* Bu renk seçili olan sayfayı vurgular, isteğinize göre değiştirebilirsiniz */
+    }
+
+    #content {
+        margin: 20px;
+    }
+
+    /* İsteğe bağlı olarak sayfa içeriğinin stilini buraya ekleyebilirsiniz */
+</style>
+<body>
+
+    <header>
+        
+        <nav>
+            <ul>
+                <li><a href="{% url 'detect_objects' %}" class="{% block detect_objects_class %}{% endblock %}">Detect Objects</a></li>
+                <li><a href="{% url 'upload_image' %}" class="{% block upload_image_class %}{% endblock %}">Upload Image</a></li>
+                <!-- Diğer sayfaları buraya ekleyebilirsiniz -->
+            </ul>
+        </nav>
+    </header>
+
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+
+</body>
+</html>

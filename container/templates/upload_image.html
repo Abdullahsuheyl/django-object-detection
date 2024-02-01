@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Detect Objects{% endblock %}
+{% block content %}
+    <h1>Image Upload</h1>
+
+    <!-- Image upload formu -->
+    <form method="post" enctype="multipart/form-data" action="{% url 'upload_image' %}">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Upload Image</button>
+    </form>
+
+{% endblock %}
